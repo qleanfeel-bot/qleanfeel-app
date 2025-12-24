@@ -1,4 +1,4 @@
-package com.example.qleanfeel_app
+package com.qleanfeel_app
 
 import io.flutter.embedding.android.FlutterActivity
 
