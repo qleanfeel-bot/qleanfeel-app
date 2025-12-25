@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "370462758346",
+    "project_id": "qleanfeel-25821",
+    "storage_bucket": "qleanfeel-25821.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370462758346:android:a80cd33b9764cbf8936b33",
+        "android_client_info": {
+          "package_name": "com.example.qleanfeel_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCASPe9BtSPxDjCiDToSUzlame4V8_g2rY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
