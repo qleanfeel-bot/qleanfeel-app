@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qleanfeel_app/features/auth/presentation/pages/login_page.dart';
+import 'package:qleanfeel_app/core/router/app_router.dart';
 import 'package:qleanfeel_app/core/theme/app_theme.dart';
 
 class App extends StatelessWidget {
@@ -7,10 +7,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
-      home: const LoginPage(),
+      routerConfig: AppRouter.router,
     );
   }
 }
