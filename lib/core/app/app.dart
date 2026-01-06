@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../features/auth/presentation/pages/login_page.dart';
-import '../theme/app_theme.dart';
+import 'package:qleanfeel_app/features/auth/presentation/pages/login_page.dart';
+import 'package:qleanfeel_app/core/theme/app_theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
