@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qleanfeel_app/features/auth/domain/validators/phone_validator.dart';
+import 'package:go_router/go_router.dart';
+import 'package:qleanfeel_app/core/router/routes.dart';
 
 class EnterPhoneScreen extends StatefulWidget {
   const EnterPhoneScreen({super.key});
@@ -29,10 +31,11 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
 
     // TODO: authRepository.sendCode(phone)
     await Future.delayed(const Duration(seconds: 1));
+    if (!mounted) return;
 
     setState(() => _isLoading = false);
 
-    // TODO: router.go('/enter-code');
+    context.go(AppRoutes.loginCode);
   }
 
   @override
