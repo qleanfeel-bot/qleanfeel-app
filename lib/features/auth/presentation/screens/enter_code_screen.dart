@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qleanfeel_app/features/auth/presentation/bloc/auth_cubit.dart';
 
 class EnterCodeScreen extends StatefulWidget {
   const EnterCodeScreen({super.key});
@@ -52,9 +54,9 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
 
     // TODO: authRepository.verifyCode(code)
     await Future.delayed(const Duration(seconds: 1));
-
+    if (!mounted) return;
     setState(() => _isLoading = false);
-
+    context.read<AuthCubit>().verifyCode(_controller.text);
     // TODO: router.go('/home');
   }
 

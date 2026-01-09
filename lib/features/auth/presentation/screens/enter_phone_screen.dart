@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qleanfeel_app/features/auth/domain/validators/phone_validator.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qleanfeel_app/core/router/routes.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qleanfeel_app/features/auth/presentation/bloc/auth_cubit.dart';
 
 class EnterPhoneScreen extends StatefulWidget {
   const EnterPhoneScreen({super.key});
@@ -34,7 +36,7 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
     if (!mounted) return;
 
     setState(() => _isLoading = false);
-
+    context.read<AuthCubit>().sendCode(_controller.text);
     context.go(AppRoutes.loginCode);
   }
 
