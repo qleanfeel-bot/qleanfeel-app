@@ -10,12 +10,16 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => AuthCubit(),
-      child: MaterialApp.router(
+  create: (_) => AuthCubit(),
+  child: Builder(
+    builder: (context) {
+      return MaterialApp.router(
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light(),
-        routerConfig: AppRouter.router,
-      ),
-    );
+        routerConfig: AppRouter.router(context),
+      );
+    },
+  ),
+);
   }
 }

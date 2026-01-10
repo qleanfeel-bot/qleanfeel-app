@@ -41,21 +41,27 @@ class _EnterCodeScreenState extends State<EnterCodeScreen> {
   }
 
   void _onChanged(String value) {
-    final isValid = value.length == _codeLength;
-    if (isValid != _isValid) {
-      setState(() => _isValid = isValid);
-    }
+  final isValid = value.length == _codeLength;
+
+  if (isValid != _isValid) {
+    setState(() => _isValid = isValid);
   }
 
+  if (isValid && !_isLoading) {
+    _submit();
+  }
+
+}
+
   Future<void> _submit() async {
-    if (!_isValid) return;
+    if (_isLoading) return;
 
     setState(() => _isLoading = true);
 
     // TODO: authRepository.verifyCode(code)
-    await Future.delayed(const Duration(seconds: 1));
-    if (!mounted) return;
-    setState(() => _isLoading = false);
+    // await Future.delayed(const Duration(seconds: 1));
+   // if (!mounted) return;
+    //setState(() => _isLoading = false);
     context.read<AuthCubit>().verifyCode(_controller.text);
     // TODO: router.go('/home');
   }
