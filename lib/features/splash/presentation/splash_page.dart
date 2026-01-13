@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:qleanfeel_app/core/di/app_di.dart';
+//import 'package:go_router/go_router.dart';
+//import 'package:qleanfeel_app/core/di/app_di.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -17,11 +17,11 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> _bootstrap() async {
-    final isAuth = await authRepository.isAuthenticated();
+    //final isAuth = await authRepository.isAuthenticated();
 
     if (!mounted) return;
 
-    context.go(isAuth ? '/home' : '/login');
+   //flutter context.go(isAuth ? '/home' : '/login');
   }
 
   @override

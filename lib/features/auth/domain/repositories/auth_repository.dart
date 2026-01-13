@@ -1,5 +1,5 @@
 import 'package:qleanfeel_app/features/auth/domain/entities/auth_user.dart';
-import 'package:qleanfeel_app/features/auth/domain/failures/auth_failure.dart';
+//import 'package:qleanfeel_app/features/auth/domain/failures/auth_failure.dart';
 
 abstract class AuthRepository {
   /// Emits current auth state and all future changes
