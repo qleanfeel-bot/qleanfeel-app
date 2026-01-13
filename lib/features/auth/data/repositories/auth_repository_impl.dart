@@ -1,10 +1,18 @@
+import 'package:qleanfeel_app/features/auth/data/datasources/firebase_auth_datasource.dart';
+import 'package:qleanfeel_app/features/auth/data/mappers/auth_user_mapper.dart';
 import 'package:qleanfeel_app/features/auth/domain/entities/auth_user.dart';
 import 'package:qleanfeel_app/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
+  final FirebaseAuthDatasource _datasource;
+
+  AuthRepositoryImpl(this._datasource);
+
   @override
   Stream<AuthUser?> authStateChanges() {
-    throw UnimplementedError();
+    return _datasource.authStateChanges().map(
+      (user) => user == null ? null : user.toDomain(),
+    );
   }
 
   @override
@@ -17,6 +25,6 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<void> signOut() {
-    throw UnimplementedError();
+    return _datasource.signOut();
   }
 }
